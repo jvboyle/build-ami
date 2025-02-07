@@ -8,7 +8,7 @@ system {
     login {
         user vyos {
             authentication {
-                encrypted-password "$6$rounds=656000$VIoMDehlNyBVPBc2$Wb1/YuMIxIW9jnZluoVtYOXzkpfSCybejW9IK2H36g2W29SF.YNR.8jUccBy3/2qiuIoiR58dPus/XCvoQm3L0"
+                encrypted-password "XXXXXXXXXXXXXXXXXXX"
             }
             level admin
         }
