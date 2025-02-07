@@ -1,0 +1,40 @@
+service {
+    ssh {
+        port 22
+    }
+}
+system {
+    host-name VyOS-AMI
+    login {
+        user vyos {
+            authentication {
+                encrypted-password "$6$rounds=656000$VIoMDehlNyBVPBc2$Wb1/YuMIxIW9jnZluoVtYOXzkpfSCybejW9IK2H36g2W29SF.YNR.8jUccBy3/2qiuIoiR58dPus/XCvoQm3L0"
+            }
+            level admin
+        }
+    }
+    syslog {
+        global {
+            facility all {
+                level notice
+            }
+            facility protocols {
+                level debug
+            }
+        }
+    }
+    ntp {
+        server "0.pool.ntp.org"
+        server "1.pool.ntp.org"
+        server "2.pool.ntp.org"
+    }
+    config-management {
+        commit-revisions 100
+    }
+}
+interfaces {
+    ethernet eth0 {
+        address dhcp
+    }
+    loopback lo
+}

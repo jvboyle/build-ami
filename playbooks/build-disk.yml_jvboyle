@@ -1,0 +1,12 @@
+---
+- name: Setup and Build Disk
+  hosts: ec2
+  user: admin
+  become: True
+  gather_facts: False
+  tasks:
+    - name: Create symlink for python
+      raw: sudo ln -s /usr/bin/python3 /usr/bin/python
+
+  roles:
+    - build-disk
